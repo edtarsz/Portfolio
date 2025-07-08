@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ApiService } from '../../controller/api';
-import type { CampgroundDTO } from '../../controller/CampgroundDTO';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '@core/services/api.service';
+import type { CampgroundDTO } from '@core/models/campground.dto';
 
 @Component({
   selector: 'app-main',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Main } from "./main/main";
-import { Header } from "./header/header";
-import { Footer } from "./footer/footer";
+import { Main } from "../main/main";
+import { Header } from "@shared/header/header";
+import { Footer } from "@shared/footer/footer";
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ICampgroundDTO } from '../models/campground.dto';
 
 @Injectable({
   providedIn: 'root'

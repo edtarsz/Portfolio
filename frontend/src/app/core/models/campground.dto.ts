@@ -1,3 +1,11 @@
+export interface ICampgroundDTO {
+    _id?: string;
+    title: string;
+    price: string;
+    description: string;
+    location: string;
+}
+
 export class CampgroundDTO implements ICampgroundDTO {
     _id?: string;
     title: string;
