@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICampgroundDTO } from '../models/campground.dto';
+import { CampgroundDTO, ICampgroundDTO } from '../models/campground.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class ApiService {
   }
 
   getCampgrounds() {
-    return this.http.get<ICampgroundDTO[]>('http://localhost:3000/campgrounds');
+    return this.http.get<CampgroundDTO[]>('http://localhost:3000/campgrounds');
+  }
+
+  getCampgroundById(id: string) {
+    return this.http.get<CampgroundDTO>(`http://localhost:3000/campgrounds/${id}`);
   }
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import type { CampgroundDTO } from '@core/models/campground.dto';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './main.html',
   styleUrl: './main.css'
 })

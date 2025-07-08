@@ -1,8 +1,8 @@
 <h1>{{ message }}</h1>
-<p>
-    @for (campground of campgrounds; track $index) {
 <ul>
-    <li>{{ campground.title }}</li>
+    @for (campground of campgrounds; track $index) {
+    <a [routerLink]="['/campgrounds', campground._id]">
+        <li>{{ campground.title }}</li>
+    </a>
+    }
 </ul>
-}
-</p>
