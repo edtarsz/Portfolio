@@ -1,1 +1,8 @@
 <h1>{{ message }}</h1>
+<p>
+    @for (campground of campgrounds; track $index) {
+<ul>
+    <li>{{ campground.title }}</li>
+</ul>
+}
+</p>
