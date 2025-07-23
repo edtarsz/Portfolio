@@ -13,7 +13,7 @@ export class CampgroundDTO implements ICampgroundDTO {
     description: string;
     location: string;
 
-    // Recibo los datos crudos, aqui los transformo y los guardo en las propiedades de la clase
+    // Se reciben los datos crudos, aqui se transforman/modifican y se guardan en las propiedades de la clase
     constructor(data: ICampgroundDTO) {
         this._id = data._id;
         this.title = data.title;

@@ -1,2 +1,11 @@
-<p>Campground show!</p>
-<h3>{{campground.title}}</h3>
+@if (campground) {
+<h2>{{campground.title}}</h2>
+<h3>{{campground.description}}</h3>
+<p>
+    <a [routerLink]="['/campgrounds']">All Campgrounds</a>
+</p>
+<button (click)="onDeleteCampground(campground._id!)" [disabled]="!campground._id">Delete Campground</button>
+<p>
+    <a [routerLink]="['/campgrounds', campground._id, 'edit']">Edit Campground</a>
+</p>
+}

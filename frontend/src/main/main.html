@@ -1,4 +1,7 @@
 <h1>{{ message }}</h1>
+<div>
+    <a [routerLink]="['/campgrounds/new']">Add Campgrounds</a>
+</div>
 <ul>
     @for (campground of campgrounds; track $index) {
     <a [routerLink]="['/campgrounds', campground._id]">

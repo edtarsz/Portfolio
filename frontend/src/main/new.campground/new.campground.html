@@ -1,0 +1,13 @@
+<h3>Add Campground</h3>
+<form [formGroup]="campForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title" required>
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" formControlName="location" required>
+    </div>
+    <button type="submit" [disabled]="!campForm.valid">Add campground</button>
+</form>
+<a [routerLink]="['/campgrounds']">All Campgrounds</a>

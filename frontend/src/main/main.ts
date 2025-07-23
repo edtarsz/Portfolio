@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ApiService } from '@core/services/api.service';
 import type { CampgroundDTO } from '@core/models/campground.dto';
 import { RouterLink } from '@angular/router';
@@ -12,11 +12,12 @@ import { RouterLink } from '@angular/router';
 export class Main implements OnInit {
   message = '';
   campgrounds: CampgroundDTO[] = [];
+  private destroyRef = inject(DestroyRef)
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getHello().subscribe({
+    const helloSub = this.apiService.getHello().subscribe({
       next: (response: any) => {
         this.message = response.message; // To do interfaz //
       },
@@ -26,7 +27,7 @@ export class Main implements OnInit {
       }
     });
 
-    this.apiService.getCampgrounds().subscribe({
+    const campgroundsSub = this.apiService.getCampgrounds().subscribe({
       next: (response: CampgroundDTO[]) => {
         this.campgrounds = response;
       },
@@ -34,6 +35,11 @@ export class Main implements OnInit {
         console.error('Error al cargar campgrounds:', err);
         this.campgrounds = [];
       }
+    });
+
+    this.destroyRef.onDestroy(() => {
+      campgroundsSub.unsubscribe();
+      helloSub.unsubscribe();
     });
   }
 }
